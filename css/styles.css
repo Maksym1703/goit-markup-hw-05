@@ -106,7 +106,7 @@ body {
 }
 
 .address-mail {
-  margin-right: 50px
+  margin-right: 50px;
 }
 
 .navigation-list {
@@ -127,6 +127,8 @@ body {
   line-height: 1.143;
   letter-spacing: 0.02em;
   color: var(--accent-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-list-link:hover,
@@ -140,6 +142,8 @@ body {
   line-height: 1.143;
   letter-spacing: 0.02em;
   color: var(--secondary-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-mail-icon:hover,
@@ -247,13 +251,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F5F4FA;
+  background-color: #f5f4fa;
   border-radius: 4px;
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
 }
-}
+
 /*==== Конец "Особенности" ====*/
 
 /*==== "Вид деятельности" ====*/
@@ -269,7 +273,6 @@ body {
   font-size: 36px;
   line-height: 1.167;
   letter-spacing: 0.03em;
-
 }
 
 .work .work-list {
@@ -284,6 +287,27 @@ body {
   padding-bottom: 94px;
 }
 
+.work-list-text {
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  transform: translateY(-100%);
+}
+
+.work-list-text {
+  font-family: var(--main-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--hero-color);
+}
 /*==== Конец "Вид деятельности" ====*/
 
 /*==== "Наша команда" ====*/
@@ -374,10 +398,10 @@ body {
 }
 /*==== "Подвал" ====*/
 .footer {
-    background-color: #2f303a;
-    margin: auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
+  background-color: #2f303a;
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .footer-address {
   color: var(--hero-color);
@@ -462,6 +486,8 @@ body {
   height: 38px;
   padding: 6px 22px;
   color: var(--hero-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects-text {
@@ -523,8 +549,9 @@ body {
 .projects-list:hover,
 .projects-list:focus {
   cursor: pointer;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-} 
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .projects-list:nth-child(3n + 3) {
   margin-right: 0px;
 }
@@ -570,6 +597,8 @@ body {
   height: 44px;
   border-radius: 50%;
   background-color: #ffffff;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-footer {
@@ -586,16 +615,16 @@ body {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-icon-footer {
   width: 20px;
   height: 20px;
   fill: var(--hero-color);
-}
-.social-list-link:hover .social-list-icon,
-.social-list-link:focus .social-list-icon {
-  fill: var(--hero-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-link:hover,
@@ -603,8 +632,14 @@ body {
   background-color: var(--accent-color-blue);
 }
 
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--hero-color);
+}
+
 .client-list-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-list-link:hover .client-list-icon,
@@ -622,10 +657,54 @@ body {
   border-radius: 4px;
   width: 170px;
   height: 90px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-list-link {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/*=========== Backdrop =============*/
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 250ms;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  min-height: 581px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }

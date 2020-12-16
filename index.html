@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -50,7 +51,7 @@
         <section class="hero">
             <div class="container">
             <h1 class="hero-title">Эффективные решения <br> для вашего бизнеса</h1>
-            <button class="hero-btn" type="button">Заказать услугу</button>
+            <button class="hero-btn" type="button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
         
@@ -108,12 +109,21 @@
             <ul class="work-list">
             <li class="work-list-item">
             <img class="work-list-img" src="./images/img1.jpg" alt="Сотрудник печатает на клавиатуре" width="370" height="294"/>
+            <div class="work-list-text">
+            <p>Десктопные приложения</p>
+            </div>
             </li>
             <li class="work-list-item">
             <img class="work-list-img" src="./images/img2.jpg" alt="Сотрудник пишет на ноутбуке" width="370" height="294"/>
+            <div class="work-list-text">
+            <p>Мобильные приложения</p>
+            </div>
             </li>
             <li class="work-list-item">
             <img class="work-list-img" src="./images/img3.png" alt="Сотрудник рисует на планшете" width="370" height="294"/>
+            <div class="work-list-text">
+            <p>Дизайнерские решения</p>
+            </div>
             </li>
             </ul>
             </div>
@@ -375,5 +385,17 @@
         </div>
         </div>
         </footer>
+        <backdrop>
+
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal"> 
+                <button type="button" class="close-btn" data-modal-close>
+                    <svg class="modal-icon" height="11px" width="11px">
+                        <use href="sprite.svg#icon-close"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+<script src="./js/modal.js"></script>
    </body>
 </html>
