@@ -11,7 +11,6 @@
   outline: 1px solid orange;
 }
 */
-
 h1,
 h2,
 h3,
@@ -107,10 +106,6 @@ body {
   margin-left: auto;
 }
 
-.address-mail {
-  margin-right: 50px;
-}
-
 .navigation-list {
   display: flex;
   align-items: center;
@@ -140,16 +135,11 @@ body {
   color: var(--accent-color-blue);
 }
 
-.address-mail {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.143;
-  letter-spacing: 0.02em;
-  color: var(--secondary-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+.address-mail,
 .address-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.143;
@@ -158,15 +148,21 @@ body {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address-mail-icon:hover,
-.address-mail-icon:focus {
+.address-list-item:hover .address-mail-icon,
+.address-list-item:focus .address-mail-icon,
+.address-list-item:active .address-mail-icon,
+.address-list-item:hover .address-contact-icon,
+.address-list-item:focus .address-contact-icon,
+.address-list-item:active .address-contact-icon {
   fill: var(--accent-color-blue);
-  cursor: pointer;
 }
 
 .address-mail:hover,
 .address-mail:focus,
-.address-mail:active {
+.address-mail:active,
+.address-contact:hover,
+.address-contact:focus,
+.address-contact:active {
   color: var(--accent-color-blue);
   cursor: pointer;
 }
@@ -178,18 +174,14 @@ body {
   letter-spacing: 0.02em;
 }
 
-.address-contact-icon:hover,
-.address-contact-icon:focus,
-.address-contact-icon:active {
-  fill: var(--accent-color-blue);
-  cursor: pointer;
+.address-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.address-contact:hover,
-.address-contact:focus,
-.address-contact:active {
-  color: var(--accent-color-blue);
-  cursor: pointer;
+.address-list-item:not(:last-child) {
+  margin-right: 50px;
 }
 /*==== Конец "Главная навигация" ====*/
 
@@ -571,12 +563,13 @@ body {
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
 }
-.projects-list.projects-card-thumb:hover,
-.projects-list.projects-card-thumb:focus {
+
+/*.projects-list:hover,
+.projects-list:focus {
   cursor: pointer;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-}
+}*/
 
 .projects-list:nth-child(3n + 3) {
   margin-right: 0px;
@@ -596,16 +589,18 @@ body {
 }
 
 .projects-card {
-  transition: all 250ms var(--timing-fn);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.projects-card:hover,
-.projects-card:focus {
+.projects-list:hover,
+.projects-list:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
   display: block;
 }
 
+.projects-list:hover .projects-overlay,
+.projects-list:focus .projects-overlay,
 .projects-card:hover .projects-overlay,
 .projects-card:focus .projects-overlay {
   transform: translateY(0);
@@ -630,22 +625,16 @@ body {
   line-height: 1.556;
   letter-spacing: 0.03em;
   color: #ffffff;
+  padding-top: 63px;
+  padding-bottom: 63px;
   padding-left: 24px;
 }
 /*=========== ИКОНКИ =============*/
 
-.address-mail-icon {
-  fill: #757575;
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+.address-mail-icon,
 .address-contact-icon {
-  fill: #757575;
-  width: 10px;
-  height: 16px;
+  display: block;
+  fill: currentColor;
   margin-right: 10px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
